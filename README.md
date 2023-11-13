@@ -1,7 +1,9 @@
-## Solution Pattern: The Backend
-
 Checkout the Frontend:
 <https://github.com/Bayurzx/CodeShift-Front>
+
+[OSI-approved License](./LICENSE)
+
+## Solution Pattern: The Backend
 
 ### Knative Function on NodeJS Setup
 
