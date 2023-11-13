@@ -1,3 +1,53 @@
+## Solution Pattern: The Backend
+
+### Knative Function on NodeJS Setup
+
+1. **Installation of the OpenShift CLI Client (oc) and Knative CLI Client (kn):**
+   Ensure that you have the OpenShift CLI (oc) and Knative CLI (kn) installed on your local machine. You can download them from the official OpenShift website.
+
+2. **Authentication and Login:**
+   Authenticate and log in to your OpenShift cluster using the following command from this link:
+   `https://oauth-openshift.apps.sandbox-m3.1530.p1.openshiftapps.com/oauth/token/request`
+   ```bash
+   oc login --token=sha256~xxx --server=https://api.sandbox-m3.1530.p1.openshiftapps.com:6443
+
+   ```
+
+3. **Create a Serverless Function Instance:**
+   Use the Knative CLI to create a serverless function instance:
+   ```bash
+   kn func create -c
+   ```
+   This command will guide you through the creation process, allowing you to specify details such as the runtime (NodeJS) and the function's entry point.
+
+### Language Model (LLM) - ChatGPT Setup
+
+1. **Create an Account with OpenAI:**
+   To use ChatGPT, create an account on the OpenAI platform and obtain your secret API key.
+
+2. **AstraDB Database Creation:**
+   - Create an account with AstraDB.
+   - Obtain the following details:
+     - `ASTRA_DB_ID`
+     - `ASTRA_DB_REGION`
+     - `ASTRA_DB_APPLICATION_TOKEN`
+
+### Github Integration
+
+1. **Create a GitHub App:**
+   - Create a GitHub App in your GitHub account settings.
+   - Configure the app to listen to relevant events such as `installation_repositories` and `push`.
+   - Set up necessary permissions for the app to access repositories.
+
+2. **Obtain Personal Access Token:**
+   - Generate a personal access token for the Octokit library. This token will be used to authenticate GitHub API requests made by your application.
+
+
+Now, your AutoDocs AI application is set up with a backend powered by Knative Functions, leveraging ChatGPT for natural language processing, AstraDB for data storage, and GitHub for version control. The frontend is seamlessly served using Knative Serving, creating a cohesive and responsive documentation platform.
+
+![AutoDocs Architectual Diagram](./AutoDocs%20AI%20(1).png)
+
+
 # Node.js Cloud Events Function
 
 Welcome to your new Node.js function project! The boilerplate function
