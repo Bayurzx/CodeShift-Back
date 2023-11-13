@@ -1,0 +1,35 @@
+specVersion: 0.35.0
+name: openshift
+runtime: node
+registry: docker.io/bayurzx
+image: docker.io/bayurzx/openshift:latest
+imageDigest: sha256:c4eac39aa04aa4af5709ddd884ebe4b2459405fa0e9db8c014f81911b479ae9a
+created: 2023-11-03T11:59:19.3704207+01:00
+invoke: cloudevent
+build:
+  builder: s2i
+  pvcSize: 256Mi
+run:
+  envs:
+  - name: APP_ID
+    value: xxx
+  - name: PRIVATE_KEY
+    value: xxx
+  - name: WEBHOOK_SECRET
+    value: xxx
+  - name: GITHUB_CLIENT_ID
+    value: xxx
+  - name: GITHUB_CLIENT_SECRET
+    value: xxx
+  - name: GITHUB_PAT
+    value: xxx
+  - name: OPENAI_API
+    value: xxx
+  - name: ASTRA_DB_ID
+    value: xxx
+  - name: ASTRA_DB_REGION
+    value: xxx
+  - name: ASTRA_DB_APPLICATION_TOKEN
+    value: xxx
+deploy:
+  namespace: bayurzx-dev
